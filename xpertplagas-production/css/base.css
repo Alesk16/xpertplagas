@@ -1,0 +1,42 @@
+/* css/base.css */
+:root {
+  --xp-oscuro-base: #13140E;
+  --xp-rojo: var(--xp-rojo);
+  --xp-rojo-hover: #B91C1C;
+  --xp-gris-tech: #1F2016;
+  --xp-blanco: #FFFFFF;
+  --xp-blanco-soft: #E5E5E5;
+  --xp-textura: #2A0A0A;
+  --xp-overlay-5: rgba(42,10,10,0.05);
+
+  --font-heading: 'Fira Sans','Segoe UI',system-ui,sans-serif;
+  --font-body: 'Segoe UI',Arial,system-ui,sans-serif;
+  --fw-bold: 700; --fw-regular: 400;
+  --lh-tight: 1.2; --lh-normal: 1.25; --lh-loose: 1.6;
+
+  --fs-h1: clamp(2rem,5vw,3.5rem);
+  --fs-h2: clamp(1.5rem,3.5vw,2.5rem);
+  --fs-h3: clamp(1.25rem,2.5vw,1.75rem);
+  --fs-body: 1rem; --fs-small: .875rem;
+
+  --sp-1:.25rem; --sp-2:.5rem; --sp-3:.75rem; --sp-4:1rem;
+  --sp-6:1.5rem; --sp-8:2rem; --sp-12:3rem; --sp-16:4rem;
+
+  --radius-sm:6px; --radius-md:10px; --radius-lg:16px; --radius-full:9999px;
+  --border-1: 1px solid var(--xp-gris-tech);
+  --shadow-card: 0 4px 20px rgba(0,0,0,.4);
+  --shadow-cta: 0 6px 20px rgba(220,38,38,.35);
+  --t-fast:150ms ease; --t-base:250ms ease;
+
+  --container:1200px; --container-sm:800px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:var(--font-body);line-height:var(--lh-normal);
+  background:var(--xp-oscuro-base);color:var(--xp-blanco);
+}
+h1,h2,h3,h4{font-family:var(--font-heading);font-weight:var(--fw-bold);
+  line-height:var(--lh-tight);margin:0 0 var(--sp-4)}
+img{max-width:100%;height:auto;display:block}
+p{margin-top:0; margin-bottom: var(--sp-4);}

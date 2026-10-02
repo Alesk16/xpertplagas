@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | XPERT PLAGAS</title>
+  <meta name="description" content="Agenda tu inspección gratuita. Contáctanos por WhatsApp o teléfono. Respuesta en menos de 24 horas.">
+  <meta property="og:title" content="Contacto | XPERT PLAGAS">
+  <meta property="og:description" content="Agenda tu inspección gratuita hoy mismo.">
+  <meta property="og:image" content="https://xpertplagas.com/assets/img/logos/logo-xpert.png">
+  <meta property="og:url" content="https://xpertplagas.com/pages/contacto.html">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="512x512" href="../assets/img/logos/isotipo.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/img/logos/isotipo.png">
+  <link rel="apple-touch-icon" href="../assets/img/logos/isotipo.png">
+  <meta name="theme-color" content="#13140E">
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="header__logo">
+    <img src="../assets/img/logos/logo-xpert.png" alt="XPERT PLAGAS">
+  </a>
+  <nav class="header__nav">
+    <a href="../index.html">Inicio</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="productos.html">Productos</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+  <a href="https://wa.me/593984024198" target="_blank" rel="noopener noreferrer" class="header__cta btn-primary">WhatsApp</a>
+  <button class="header__hamburger" aria-label="Abrir menú" aria-expanded="false">
+    <span class="header__hamburger-line"></span>
+    <span class="header__hamburger-line"></span>
+    <span class="header__hamburger-line"></span>
+  </button>
+</header>
+
+<main>
+  <!-- 1. HERO -->
+  <section class="contacto-hero">
+    <div class="container">
+      <div class="hero-badge">CONTACTO</div>
+      <h1>Hablemos de tu Espacio</h1>
+      <p>Cuéntanos tu caso. Te respondemos en menos de 24 horas hábiles con una propuesta a la medida.</p>
+    </div>
+  </section>
+
+  <!-- 2. LAYOUT 2 COLUMNAS -->
+  <section class="contact-layout-section">
+    <div class="contact-layout">
+      <!-- Columna izquierda: Formulario -->
+      <div class="contact-layout__form">
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Nombre completo *</label>
+            <input type="text" id="name" name="name" required placeholder="Juan Pérez">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" placeholder="tu@correo.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Teléfono *</label>
+              <input type="tel" id="phone" name="phone" required placeholder="098 402 4198">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Tipo de servicio *</label>
+            <select id="service" name="service" required>
+              <option value="">Selecciona una opción</option>
+              <option value="Fumigación profesional">Fumigación profesional</option>
+              <option value="Desratización y control de roedores">Desratización y control de roedores</option>
+              <option value="Desinfección de ambientes">Desinfección de ambientes</option>
+              <option value="Control de aves">Control de aves</option>
+              <option value="Lámparas UV atrapa-insectos">Lámparas UV atrapa-insectos</option>
+              <option value="Inspección gratuita">Inspección gratuita (sin costo)</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="space">Tipo de espacio</label>
+            <select id="space" name="space">
+              <option value="">Selecciona una opción</option>
+              <option value="Residencial">Residencial</option>
+              <option value="Comercial">Comercial</option>
+              <option value="Industrial">Industrial</option>
+              <option value="Restaurante">Restaurante</option>
+              <option value="Bodega">Bodega</option>
+              <option value="Oficina">Oficina</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Cuéntanos tu caso *</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Describe brevemente el problema o lo que necesitas..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary contact-form__submit">
+            <i class="fa-brands fa-whatsapp"></i> Enviar por WhatsApp
+          </button>
+          <p class="contact-form__legal">Al enviar se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+          <div class="form-status" id="form-status" role="alert" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <!-- Columna derecha: Info -->
+      <div class="contact-info">
+        <h2>Información de contacto</h2>
+
+        <div class="contact-info__block">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <strong>Teléfono</strong>
+            <a href="tel:+593984024198">+593 98 402 4198</a>
+          </div>
+        </div>
+
+        <div class="contact-info__block">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <strong>Correo</strong>
+            <a href="mailto:gerencia@xpertplagas.com">gerencia@xpertplagas.com</a>
+          </div>
+        </div>
+
+        <div class="contact-info__block">
+          <i class="fa-solid fa-globe"></i>
+          <div>
+            <strong>Sitio web</strong>
+            <a href="https://xpertplagas.com">www.xpertplagas.com</a>
+          </div>
+        </div>
+
+        <div class="contact-info__block">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <strong>Matriz</strong>
+            <span>Quito, Ecuador</span>
+          </div>
+        </div>
+
+        <div class="contact-info__block">
+          <i class="fa-solid fa-map"></i>
+          <div>
+            <strong>Cobertura</strong>
+            <span>Quito &middot; Guayaquil &middot; Cuenca</span>
+          </div>
+        </div>
+
+        <div class="contact-info__whatsapp">
+          <p>¿Prefieres WhatsApp? Escríbenos directo:</p>
+          <a href="https://wa.me/593984024198?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <i class="fa-brands fa-whatsapp"></i> Abrir WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. MAPA -->
+  <section class="contact-map">
+    <iframe src="https://www.google.com/maps?q=-0.282295,-78.538117&amp;z=17&amp;output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación Matriz XpertPlagas"></iframe>
+  </section>
+</main>
+
+<div class="whatsapp-float">
+  <div class="wa-message">¡Hola! ¿Necesitas asistencia inmediata?</div>
+  <a href="https://wa.me/593984024198" target="_blank" rel="noopener noreferrer" class="wa-button" aria-label="Contactar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+</div>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__col">
+      <img src="../assets/img/logos/logo-xpert.png" alt="XPERT PLAGAS" class="footer__logo">
+      <p>Líderes en el control de plagas. Atención a emergencias de manera inmediata.</p>
+    </div>
+    <div class="footer__col">
+      <h3>Contacto</h3>
+      <p>📞 <a href="tel:+593984024198">098 402 4198</a></p>
+      <p>✉️ <a href="mailto:gerencia@xpertplagas.com">gerencia@xpertplagas.com</a></p>
+      <p>🌐 <a href="https://xpertplagas.com">www.xpertplagas.com</a></p>
+    </div>
+    <div class="footer__col">
+      <h3>Navegación</h3>
+      <a href="../index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="productos.html">Productos</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p>© 2025 XPERT PLAGAS. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="../js/main.js" defer></script>
+<button class="back-to-top" aria-label="Volver arriba" type="button">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+</body>
+</html>

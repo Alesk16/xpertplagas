@@ -1,4 +1,4 @@
-﻿/* css/components.css */
+/* css/components.css */
 .btn-primary{display:inline-block;background-color:var(--xp-rojo);color:var(--xp-blanco);padding:16px 32px;text-decoration:none;font-weight:var(--fw-bold);border:none;cursor:pointer;transition:background-color var(--t-fast),transform var(--t-fast);border-radius:var(--radius-md);box-shadow:var(--shadow-cta)}
 .btn-primary:hover{background-color:var(--xp-rojo-hover);color:var(--xp-blanco);transform:translateY(-2px)}
 

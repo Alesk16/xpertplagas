@@ -1,4 +1,4 @@
-﻿// js/main.js
+// js/main.js
 function toggleClientsExtra(){
   var wrap=document.getElementById('clients-extra-wrapper');
   var topBtn=document.getElementById('clients-toggle-btn');

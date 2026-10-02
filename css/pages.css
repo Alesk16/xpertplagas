@@ -1,4 +1,4 @@
-﻿/* css/pages.css */
+/* css/pages.css */
 .hero{padding:120px 0;} 
 .hero-container{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .hero-content h1{font-size:var(--fs-h1); margin-bottom:30px}

@@ -54,57 +54,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
   
   
+  
+  // ===== FORMULARIO DE CONTACTO -> WHATSAPP =====
   const contactForm = document.getElementById('contact-form');
-  const formStatus = document.getElementById('form-status');
-  const WHATSAPP_NUMBER = '593984024198';
+  console.log('[XpertPlagas] contact-form encontrado:', !!contactForm);
 
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      e.stopPropagation();
+      console.log('[XpertPlagas] Submit capturado, abriendo WhatsApp...');
 
-      const name = contactForm.name.value.trim();
-      const phone = contactForm.phone.value.trim();
-      const service = contactForm.service.value;
-      const message = contactForm.message.value.trim();
+      const name = (contactForm.querySelector('#name')?.value || '').trim();
+      const phone = (contactForm.querySelector('#phone')?.value || '').trim();
+      const service = (contactForm.querySelector('#service')?.value || '').trim();
+      const message = (contactForm.querySelector('#message')?.value || '').trim();
+      const email = (contactForm.querySelector('#email')?.value || '').trim();
+      const space = (contactForm.querySelector('#space')?.value || '').trim();
+
+      const formStatus = document.getElementById('form-status');
 
       if (!name || !phone || !service || !message) {
         if (formStatus) {
-          formStatus.textContent = "✗ Por favor completa todos los campos obligatorios (*).";
+          formStatus.textContent = '✗ Por favor completa todos los campos obligatorios (*).';
           formStatus.className = 'form-status form-status--error';
         }
         return;
       }
 
-      const email = contactForm.email.value.trim();
-      const space = contactForm.space.value;
+      // TODO: volver a 593984024198 en produccion
+      const WHATSAPP_NUMBER = '593988621603';
 
-      let waMessage = '*Nuevo contacto desde xpertplagas.com*
-
-';
-      waMessage += '*Nombre:* ' + name + '
-';
-      waMessage += '*Teléfono:* ' + phone + '
-';
-      if (email) waMessage += '*Correo:* ' + email + '
-';
-      waMessage += '*Servicio:* ' + service + '
-';
-      if (space) waMessage += '*Espacio:* ' + space + '
-';
-      waMessage += '
-*Mensaje:*
-' + message;
+      let waMessage = '*Nuevo contacto desde xpertplagas.com*\n\n';
+      waMessage += '*Nombre:* ' + name + '\n';
+      waMessage += '*Teléfono:* ' + phone + '\n';
+      if (email) waMessage += '*Correo:* ' + email + '\n';
+      waMessage += '*Servicio:* ' + service + '\n';
+      if (space) waMessage += '*Espacio:* ' + space + '\n';
+      waMessage += '\n*Mensaje:*\n' + message;
 
       const url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(waMessage);
+      console.log('[XpertPlagas] Abriendo URL:', url);
+
       window.open(url, '_blank', 'noopener,noreferrer');
 
       if (formStatus) {
-        formStatus.textContent = "✓ Se abrió WhatsApp con tu mensaje. Si no se abrió automáticamente, revisa los permisos de tu navegador.";
+        formStatus.textContent = '✓ Se abrió WhatsApp con tu mensaje. Si no se abrió, revisa que tu navegador no esté bloqueando pop-ups.';
         formStatus.className = 'form-status form-status--success';
       }
 
-      setTimeout(() => contactForm.reset(), 500);
+      setTimeout(() => {
+        contactForm.reset();
+        if (formStatus) formStatus.textContent = '';
+      }, 8000);
     });
+  } else {
+    console.warn('[XpertPlagas] ⚠️ No se encontró el formulario con id="contact-form"');
   }
 
   const backToTop = document.querySelector('.back-to-top');

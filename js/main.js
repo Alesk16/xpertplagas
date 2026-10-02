@@ -82,8 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // TODO: volver a 593984024198 en produccion
-      const WHATSAPP_NUMBER = '593988621603';
+      const WHATSAPP_NUMBER = '593984024198'; // produccion
 
       let waMessage = '*Nuevo contacto desde xpertplagas.com*\n\n';
       waMessage += '*Nombre:* ' + name + '\n';

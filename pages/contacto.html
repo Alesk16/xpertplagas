@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto | XPERT PLAGAS</title>
-  <meta name="description" content="Agenda tu inspección gratuita. Contáctanos por formulario, WhatsApp o teléfono. Respuesta en menos de 24 horas.">
+  <meta name="description" content="Agenda tu inspección gratuita. Contáctanos por WhatsApp o teléfono. Respuesta en menos de 24 horas.">
   <meta property="og:title" content="Contacto | XPERT PLAGAS">
   <meta property="og:description" content="Agenda tu inspección gratuita hoy mismo.">
   <meta property="og:image" content="https://xpertplagas.com/assets/img/logos/logo-xpert.png">
@@ -61,12 +61,7 @@
     <div class="contact-layout">
       <!-- Columna izquierda: Formulario -->
       <div class="contact-layout__form">
-        <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="88b3e8a3-b3f2-455c-a150-32dc7d9cd40b">
-          <input type="hidden" name="subject" value="Nuevo contacto desde xpertplagas.com">
-          <input type="hidden" name="from_name" value="XpertPlagas Web">
-          <input type="checkbox" name="botcheck" class="hidden">
-
+        <form id="contact-form" class="contact-form" novalidate>
           <div class="form-group">
             <label for="name">Nombre completo *</label>
             <input type="text" id="name" name="name" required placeholder="Juan Pérez">
@@ -74,8 +69,8 @@
 
           <div class="form-row">
             <div class="form-group">
-              <label for="email">Correo electrónico *</label>
-              <input type="email" id="email" name="email" required placeholder="tu@correo.com">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" placeholder="tu@correo.com">
             </div>
             <div class="form-group">
               <label for="phone">Teléfono *</label>
@@ -116,9 +111,11 @@
             <textarea id="message" name="message" rows="5" required placeholder="Describe brevemente el problema o lo que necesitas..."></textarea>
           </div>
 
-          <button type="submit" class="btn-primary contact-form__submit">Enviar mensaje</button>
+          <button type="submit" class="btn-primary contact-form__submit">
+            <i class="fa-brands fa-whatsapp"></i> Enviar por WhatsApp
+          </button>
+          <p class="contact-form__legal">Al enviar se abrirá WhatsApp con tu mensaje listo para enviar.</p>
           <div class="form-status" id="form-status" role="alert" aria-live="polite"></div>
-          <p class="contact-form__legal">Al enviar aceptas ser contactado por nuestro equipo técnico.</p>
         </form>
       </div>
 

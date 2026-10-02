@@ -53,39 +53,57 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   
+  
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
-  if (contactForm && formStatus) {
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Enviando...';
-      formStatus.className = 'form-status';
+  const WHATSAPP_NUMBER = '593984024198';
 
-      try {
-        const formData = new FormData(contactForm);
-        const response = await fetch(contactForm.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-        const result = await response.json();
-        if (response.ok && result.success) {
-          formStatus.textContent = "\u2713 \u00A1Gracias! Tu mensaje fue enviado. Te contactaremos en menos de 24 horas h\u00E1biles.";
-          formStatus.classList.add('form-status--success');
-          contactForm.reset();
-        } else {
-          throw new Error(result.message || 'Error al enviar');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = contactForm.name.value.trim();
+      const phone = contactForm.phone.value.trim();
+      const service = contactForm.service.value;
+      const message = contactForm.message.value.trim();
+
+      if (!name || !phone || !service || !message) {
+        if (formStatus) {
+          formStatus.textContent = "✗ Por favor completa todos los campos obligatorios (*).";
+          formStatus.className = 'form-status form-status--error';
         }
-      } catch (err) {
-        formStatus.textContent = "\u2717 Hubo un problema al enviar. Por favor escr\u00EDbenos directo por WhatsApp al 098 402 4198.";
-        formStatus.classList.add('form-status--error');
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
+        return;
       }
+
+      const email = contactForm.email.value.trim();
+      const space = contactForm.space.value;
+
+      let waMessage = '*Nuevo contacto desde xpertplagas.com*
+
+';
+      waMessage += '*Nombre:* ' + name + '
+';
+      waMessage += '*Teléfono:* ' + phone + '
+';
+      if (email) waMessage += '*Correo:* ' + email + '
+';
+      waMessage += '*Servicio:* ' + service + '
+';
+      if (space) waMessage += '*Espacio:* ' + space + '
+';
+      waMessage += '
+*Mensaje:*
+' + message;
+
+      const url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(waMessage);
+      window.open(url, '_blank', 'noopener,noreferrer');
+
+      if (formStatus) {
+        formStatus.textContent = "✓ Se abrió WhatsApp con tu mensaje. Si no se abrió automáticamente, revisa los permisos de tu navegador.";
+        formStatus.className = 'form-status form-status--success';
+      }
+
+      setTimeout(() => contactForm.reset(), 500);
     });
   }
 

@@ -3,8 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>XpertPlagas | Contacto</title>
-  <link rel="icon" type="image/png" href="../favicon.png">
+  <title>Contacto | XPERT PLAGAS</title>
+  <meta name="description" content="Agenda tu inspección gratuita. Contáctanos por formulario, WhatsApp o teléfono. Respuesta en menos de 24 horas.">
+  <meta property="og:title" content="Contacto | XPERT PLAGAS">
+  <meta property="og:description" content="Agenda tu inspección gratuita hoy mismo.">
+  <meta property="og:image" content="https://xpertplagas.com/assets/img/logos/logo-xpert.png">
+  <meta property="og:url" content="https://xpertplagas.com/pages/contacto.html">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="512x512" href="../assets/img/logos/isotipo.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/img/logos/isotipo.png">
+  <link rel="apple-touch-icon" href="../assets/img/logos/isotipo.png">
+  <meta name="theme-color" content="#13140E">
+  
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -50,11 +61,10 @@
     <div class="contact-layout">
       <!-- Columna izquierda: Formulario -->
       <div class="contact-layout__form">
-        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="88b3e8a3-b3f2-455c-a150-32dc7d9cd40b">
           <input type="hidden" name="subject" value="Nuevo contacto desde xpertplagas.com">
           <input type="hidden" name="from_name" value="XpertPlagas Web">
-          <input type="hidden" name="redirect" value="https://xpertplagas.com/pages/contacto.html?success=true">
           <input type="checkbox" name="botcheck" class="hidden">
 
           <div class="form-group">
@@ -107,6 +117,7 @@
           </div>
 
           <button type="submit" class="btn-primary contact-form__submit">Enviar mensaje</button>
+          <div class="form-status" id="form-status" role="alert" aria-live="polite"></div>
           <p class="contact-form__legal">Al enviar aceptas ser contactado por nuestro equipo técnico.</p>
         </form>
       </div>
@@ -205,5 +216,8 @@
 </footer>
 
 <script src="../js/main.js" defer></script>
+<button class="back-to-top" aria-label="Volver arriba" type="button">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
 </body>
 </html>

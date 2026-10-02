@@ -28,16 +28,147 @@
     <a href="contacto.html">Contacto</a>
   </nav>
   <a href="https://wa.me/593984024198" target="_blank" rel="noopener noreferrer" class="header__cta btn-primary">WhatsApp</a>
+  <button class="header__hamburger" aria-label="Abrir menú" aria-expanded="false">
+    <span class="header__hamburger-line"></span>
+    <span class="header__hamburger-line"></span>
+    <span class="header__hamburger-line"></span>
+  </button>
 </header>
 
-<main style="padding-top: 120px; min-height: 60vh;">
-  <div class="container">
-    <h1 style="margin-bottom: 2rem;">Contacto</h1>
-    
-  <p>098 402 4198<br>gerencia@xpertplagas.com</p>
-  <a href="https://wa.me/593984024198" target="_blank" class="btn-primary">Escríbenos por WhatsApp</a>
+<main>
+  <!-- 1. HERO -->
+  <section class="contacto-hero">
+    <div class="container">
+      <div class="hero-badge">CONTACTO</div>
+      <h1>Hablemos de tu Espacio</h1>
+      <p>Cuéntanos tu caso. Te respondemos en menos de 24 horas hábiles con una propuesta a la medida.</p>
+    </div>
+  </section>
 
-  </div>
+  <!-- 2. LAYOUT 2 COLUMNAS -->
+  <section class="contact-layout-section">
+    <div class="contact-layout">
+      <!-- Columna izquierda: Formulario -->
+      <div class="contact-layout__form">
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="88b3e8a3-b3f2-455c-a150-32dc7d9cd40b">
+          <input type="hidden" name="subject" value="Nuevo contacto desde xpertplagas.com">
+          <input type="hidden" name="from_name" value="XpertPlagas Web">
+          <input type="hidden" name="redirect" value="https://xpertplagas.com/pages/contacto.html?success=true">
+          <input type="checkbox" name="botcheck" class="hidden">
+
+          <div class="form-group">
+            <label for="name">Nombre completo *</label>
+            <input type="text" id="name" name="name" required placeholder="Juan Pérez">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Correo electrónico *</label>
+              <input type="email" id="email" name="email" required placeholder="tu@correo.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Teléfono *</label>
+              <input type="tel" id="phone" name="phone" required placeholder="098 402 4198">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Tipo de servicio *</label>
+            <select id="service" name="service" required>
+              <option value="">Selecciona una opción</option>
+              <option value="Fumigación profesional">Fumigación profesional</option>
+              <option value="Desratización y control de roedores">Desratización y control de roedores</option>
+              <option value="Desinfección de ambientes">Desinfección de ambientes</option>
+              <option value="Control de aves">Control de aves</option>
+              <option value="Lámparas UV atrapa-insectos">Lámparas UV atrapa-insectos</option>
+              <option value="Inspección gratuita">Inspección gratuita (sin costo)</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="space">Tipo de espacio</label>
+            <select id="space" name="space">
+              <option value="">Selecciona una opción</option>
+              <option value="Residencial">Residencial</option>
+              <option value="Comercial">Comercial</option>
+              <option value="Industrial">Industrial</option>
+              <option value="Restaurante">Restaurante</option>
+              <option value="Bodega">Bodega</option>
+              <option value="Oficina">Oficina</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Cuéntanos tu caso *</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Describe brevemente el problema o lo que necesitas..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary contact-form__submit">Enviar mensaje</button>
+          <p class="contact-form__legal">Al enviar aceptas ser contactado por nuestro equipo técnico.</p>
+        </form>
+      </div>
+
+      <!-- Columna derecha: Info -->
+      <div class="contact-info">
+        <h2>Información de contacto</h2>
+
+        <div class="contact-info__block">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <strong>Teléfono</strong>
+            <a href="tel:+593984024198">+593 98 402 4198</a>
+          </div>
+        </div>
+
+        <div class="contact-info__block">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <strong>Correo</strong>
+            <a href="mailto:gerencia@xpertplagas.com">gerencia@xpertplagas.com</a>
+          </div>
+        </div>
+
+        <div class="contact-info__block">
+          <i class="fa-solid fa-globe"></i>
+          <div>
+            <strong>Sitio web</strong>
+            <a href="https://xpertplagas.com">www.xpertplagas.com</a>
+          </div>
+        </div>
+
+        <div class="contact-info__block">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <strong>Matriz</strong>
+            <span>Quito, Ecuador</span>
+          </div>
+        </div>
+
+        <div class="contact-info__block">
+          <i class="fa-solid fa-map"></i>
+          <div>
+            <strong>Cobertura</strong>
+            <span>Quito &middot; Guayaquil &middot; Cuenca</span>
+          </div>
+        </div>
+
+        <div class="contact-info__whatsapp">
+          <p>¿Prefieres WhatsApp? Escríbenos directo:</p>
+          <a href="https://wa.me/593984024198?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <i class="fa-brands fa-whatsapp"></i> Abrir WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. MAPA -->
+  <section class="contact-map">
+    <iframe src="https://www.google.com/maps?q=-0.282295,-78.538117&amp;z=17&amp;output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación Matriz XpertPlagas"></iframe>
+  </section>
 </main>
 
 <div class="whatsapp-float">

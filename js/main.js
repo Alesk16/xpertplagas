@@ -34,4 +34,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if(clientsTopBtn) clientsTopBtn.addEventListener('click', toggleClients);
   if(clientsBottomBtn) clientsBottomBtn.addEventListener('click', toggleClients);
+
+  const hamburger = document.querySelector('.header__hamburger');
+  const nav = document.querySelector('.header__nav');
+  if (hamburger && nav) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!isOpen));
+      hamburger.setAttribute('aria-label', isOpen ? 'Abrir menú' : 'Cerrar menú');
+      nav.classList.toggle('is-open', !isOpen);
+    });
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.setAttribute('aria-expanded', 'false');
+        nav.classList.remove('is-open');
+      });
+    });
+  }
 });

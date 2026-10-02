@@ -1,7 +1,7 @@
 /* css/base.css */
 :root {
   --xp-oscuro-base: #13140E;
-  --xp-rojo: #DC2626;
+  --xp-rojo: var(--xp-rojo);
   --xp-rojo-hover: #B91C1C;
   --xp-gris-tech: #1F2016;
   --xp-blanco: #FFFFFF;

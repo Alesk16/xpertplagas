@@ -1,26 +1,37 @@
 // js/main.js
-function toggleClientsExtra(){
-  var wrap=document.getElementById('clients-extra-wrapper');
-  var topBtn=document.getElementById('clients-toggle-btn');
-  if(!wrap || !topBtn) return;
-  var isOpen=wrap.style.gridTemplateRows==='1fr';
-  if(!isOpen){
-    wrap.style.gridTemplateRows='1fr';
-    topBtn.style.opacity='0';
-    topBtn.style.pointerEvents='none';
-  }else{
-    wrap.style.gridTemplateRows='0fr';
-    topBtn.style.opacity='1';
-    topBtn.style.pointerEvents='auto';
-  }
-}
+document.addEventListener('DOMContentLoaded', () => {
+  // FAQ toggles
+  const faqBtns = document.querySelectorAll('.faq-btn');
+  faqBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = btn.parentElement.querySelector('.faq-panel');
+      const icon = btn.querySelector('.faq-icon');
+      if(!panel || !icon) return;
+      const isOpen = panel.style.gridTemplateRows === '1fr';
+      panel.style.gridTemplateRows = isOpen ? '0fr' : '1fr';
+      icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+    });
+  });
 
-// Ensure toggle functions from FAQs work
-function toggleFaq(btn) {
-  var panel = btn.parentElement.querySelector('.faq-panel');
-  var icon = btn.querySelector('.faq-icon');
-  if(!panel || !icon) return;
-  var isOpen = panel.style.gridTemplateRows === '1fr';
-  panel.style.gridTemplateRows = isOpen ? '0fr' : '1fr';
-  icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
-}
+  // Clients toggle
+  const clientsTopBtn = document.querySelector('.clients-toggle-btn');
+  const clientsBottomBtn = document.querySelector('.clients-toggle-btn-bottom');
+  const clientsWrap = document.querySelector('.clients-extra-wrapper');
+
+  function toggleClients() {
+    if(!clientsWrap || !clientsTopBtn) return;
+    const isOpen = clientsWrap.style.gridTemplateRows === '1fr';
+    if(!isOpen){
+      clientsWrap.style.gridTemplateRows = '1fr';
+      clientsTopBtn.style.opacity = '0';
+      clientsTopBtn.style.pointerEvents = 'none';
+    } else {
+      clientsWrap.style.gridTemplateRows = '0fr';
+      clientsTopBtn.style.opacity = '1';
+      clientsTopBtn.style.pointerEvents = 'auto';
+    }
+  }
+
+  if(clientsTopBtn) clientsTopBtn.addEventListener('click', toggleClients);
+  if(clientsBottomBtn) clientsBottomBtn.addEventListener('click', toggleClients);
+});

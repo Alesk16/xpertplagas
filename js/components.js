@@ -46,20 +46,21 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   </div>\;
 
-    const headerMount = document.getElementById('header-mount') || document.getElementById('main-header');
+    const headerMount = document.getElementById('header-mount') || document.getElementById('main-header') || document.querySelector('header');
     if (headerMount) {
-        // Because the original mount was a <header> tag, inserting a <header> inside <header> is wrong.
-        // Let's replace outerHTML if it's main-header, or just innerHTML.
-        if (headerMount.tagName === 'HEADER' && headerMount.id === 'main-header') {
+        if (headerMount.tagName === 'HEADER') {
             headerMount.outerHTML = HEADER;
         } else {
             headerMount.innerHTML = HEADER;
         }
     }
 
-    const footerMount = document.getElementById('footer-mount') || document.getElementById('main-footer');
+    const footerMount = document.getElementById('footer-mount') || document.getElementById('main-footer') || document.querySelector('footer');
     if (footerMount) {
-        footerMount.innerHTML = FOOTER;
-        footerMount.className = "footer"; // Ensure footer class is present
+        if (footerMount.tagName === 'FOOTER') {
+            footerMount.outerHTML = '<footer class="footer">' + FOOTER + '</footer>';
+        } else {
+            footerMount.innerHTML = FOOTER;
+        }
     }
 });
